@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none" aria-hidden="true" role="img">
+  <title>Sjeldenhetssymboler: stjerne, diamant og tre-stjerne</title>
+  <!-- Stjerne (vanlig) -->
+  <polygon points="30,15 35,27 48,27 38,35 41,48 30,41 19,48 22,35 12,27 25,27" fill="currentColor" opacity="0.6" style="color: var(--text-muted)"/>
+  <!-- Diamant (sjelden) -->
+  <polygon points="120,12 140,30 120,52 100,30" fill="currentColor" opacity="0.5" style="color: var(--highlight)"/>
+  <!-- Tre stjerner (ultra-sjelden) -->
+  <polygon points="190,20 194,28 202,28 196,34 198,42 190,37 182,42 184,34 178,28 186,28" fill="currentColor" opacity="0.7" style="color: var(--accent)"/>
+  <polygon points="210,20 214,28 222,28 216,34 218,42 210,37 202,42 204,34 198,28 206,28" fill="currentColor" opacity="0.7" style="color: var(--accent)"/>
+  <polygon points="230,20 234,28 242,28 236,34 238,42 230,37 222,42 224,34 218,28 226,28" fill="currentColor" opacity="0.7" style="color: var(--accent)"/>
+</svg>

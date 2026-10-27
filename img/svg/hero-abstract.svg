@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" fill="none" aria-hidden="true" role="img">
+  <title>Abstrakte kortformer i blågrønne og gylne toner</title>
+  <!-- Bakgrunnsform: stort kort -->
+  <rect x="120" y="30" width="160" height="220" rx="14" fill="currentColor" opacity="0.08" transform="rotate(-8 200 140)" style="color: var(--primary)"/>
+  <!-- Mellomkort -->
+  <rect x="150" y="50" width="140" height="190" rx="12" fill="currentColor" opacity="0.12" transform="rotate(4 220 145)" style="color: var(--highlight)"/>
+  <!-- Fremste kort -->
+  <rect x="135" y="45" width="130" height="180" rx="12" fill="currentColor" opacity="0.18" style="color: var(--primary)"/>
+  <!-- Hodefelt på fremste kort -->
+  <rect x="145" y="55" width="110" height="35" rx="6" fill="currentColor" opacity="0.25" style="color: var(--accent)"/>
+  <!-- Kunstfelt -->
+  <rect x="145" y="98" width="110" height="95" rx="6" fill="currentColor" opacity="0.12" style="color: var(--primary)"/>
+  <!-- Tekstlinjer -->
+  <rect x="145" y="200" width="70" height="6" rx="3" fill="currentColor" opacity="0.2" style="color: var(--text)"/>
+  <rect x="145" y="212" width="50" height="6" rx="3" fill="currentColor" opacity="0.15" style="color: var(--text)"/>
+  <rect x="145" y="224" width="60" height="6" rx="3" fill="currentColor" opacity="0.15" style="color: var(--text)"/>
+  <!-- Decorative circles -->
+  <circle cx="80" cy="80" r="12" fill="currentColor" opacity="0.15" style="color: var(--accent)"/>
+  <circle cx="320" cy="200" r="8" fill="currentColor" opacity="0.2" style="color: var(--highlight)"/>
+  <circle cx="310" cy="60" r="5" fill="currentColor" opacity="0.15" style="color: var(--primary)"/>
+  <!-- Stjerne -->
+  <polygon points="340,120 343,128 352,128 345,134 347,142 340,137 333,142 335,134 328,128 337,128" fill="currentColor" opacity="0.25" style="color: var(--accent)"/>
+</svg>

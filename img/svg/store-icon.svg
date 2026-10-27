@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" aria-hidden="true" role="img">
+  <title>Abstrakt butikkikon</title>
+  <!-- Tak -->
+  <path d="M10 30 L40 10 L70 30" stroke="currentColor" stroke-width="3" fill="none" opacity="0.4" style="color: var(--primary)"/>
+  <!-- Hus -->
+  <rect x="18" y="30" width="44" height="38" rx="3" fill="currentColor" opacity="0.12" style="color: var(--primary)"/>
+  <rect x="18" y="30" width="44" height="38" rx="3" fill="none" stroke="currentColor" stroke-width="2" opacity="0.3" style="color: var(--primary)"/>
+  <!-- Dør -->
+  <rect x="34" y="44" width="12" height="24" rx="2" fill="currentColor" opacity="0.25" style="color: var(--accent)"/>
+  <!-- Vindu -->
+  <rect x="22" y="35" width="10" height="10" rx="2" fill="currentColor" opacity="0.15" style="color: var(--highlight)"/>
+  <rect x="48" y="35" width="10" height="10" rx="2" fill="currentColor" opacity="0.15" style="color: var(--highlight)"/>
+  <!-- Skyltedetalj -->
+  <rect x="14" y="28" width="52" height="5" rx="2" fill="currentColor" opacity="0.2" style="color: var(--text)"/>
+</svg>

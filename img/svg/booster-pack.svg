@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" fill="none" aria-hidden="true" role="img">
+  <title>Abstrakt booster-pakke</title>
+  <!-- Pakke-kropp -->
+  <rect x="10" y="10" width="100" height="140" rx="10" fill="currentColor" opacity="0.12" style="color: var(--primary)"/>
+  <rect x="15" y="15" width="90" height="130" rx="8" fill="none" stroke="currentColor" stroke-width="2" opacity="0.3" style="color: var(--primary)"/>
+  <!-- Toppsegl -->
+  <path d="M30 15 L60 8 L90 15" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3" style="color: var(--accent)"/>
+  <!-- Mønster i midten -->
+  <rect x="30" y="50" width="60" height="60" rx="8" fill="currentColor" opacity="0.15" style="color: var(--highlight)"/>
+  <circle cx="60" cy="80" r="18" fill="currentColor" opacity="0.2" style="color: var(--primary)"/>
+  <!-- Bunn tekst-linjer -->
+  <rect x="30" y="120" width="60" height="5" rx="2.5" fill="currentColor" opacity="0.2" style="color: var(--text)"/>
+  <rect x="40" y="130" width="40" height="5" rx="2.5" fill="currentColor" opacity="0.15" style="color: var(--text)"/>
+</svg>

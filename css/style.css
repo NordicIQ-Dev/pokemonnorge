@@ -1,0 +1,551 @@
+/* ===== pokemonnorge.no – style.css ===== */
+/* Fargepalett – Lys modus */
+:root {
+  --bg: #f7f9fb;
+  --surface: #ffffff;
+  --primary: #0d5c6e;
+  --primary-light: #138199;
+  --accent: #c8862a;
+  --accent-light: #e5a94a;
+  --highlight: #6b5ca5;
+  --highlight-light: #8b7cc5;
+  --text: #1a1f2e;
+  --text-muted: #5a6375;
+  --border: #dde2ea;
+  --focus-ring: #c8862a;
+  --shadow: rgba(13, 92, 110, 0.08);
+  --shadow-lg: rgba(13, 92, 110, 0.14);
+  --radius: 10px;
+  --radius-lg: 16px;
+}
+
+/* Mørk modus */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1621;
+    --surface: #1a2636;
+    --primary: #3dd6f5;
+    --primary-light: #6de4ff;
+    --accent: #f0b849;
+    --accent-light: #f5cc6e;
+    --highlight: #a89ad4;
+    --highlight-light: #c4b8e8;
+    --text: #e6eaf2;
+    --text-muted: #9aa3b5;
+    --border: #2a3a4e;
+    --focus-ring: #f0b849;
+    --shadow: rgba(0, 0, 0, 0.25);
+    --shadow-lg: rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* ===== Reset & base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+/* ===== Typografi ===== */
+h1, h2, h3, h4 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+h1 { font-size: clamp(1.75rem, 5vw, 2.75rem); }
+h2 { font-size: clamp(1.4rem, 4vw, 2rem); margin-top: 2rem; }
+h3 { font-size: clamp(1.15rem, 3vw, 1.4rem); margin-top: 1.5rem; }
+
+p {
+  margin-bottom: 1rem;
+  max-width: 72ch;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+code, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+}
+
+/* ===== Fokusering (tilgjengelighet) ===== */
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ===== Skip-navigasjon ===== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.75rem 1.25rem;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  font-weight: 600;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ===== Layout ===== */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ===== Header & navigasjon ===== */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 8px var(--shadow);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.site-logo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-logo svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Navigasjon */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.site-nav a {
+  padding: 0.5rem 0.85rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+
+/* Mobilmeny */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--text);
+}
+
+.nav-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 24px var(--shadow-lg);
+    padding: 0.5rem 1rem 1rem;
+    gap: 0;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 0.75rem 0.85rem;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+  }
+
+  .site-nav a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  padding: 4rem 0 3rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--primary) 8%, transparent) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+}
+
+.hero .subtitle {
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.hero-illustration {
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ===== Kort / seksjoner ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--shadow-lg);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.card svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.75rem;
+}
+
+/* ===== Nyheter ===== */
+.news-section {
+  margin: 2.5rem 0;
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+}
+
+.news-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+}
+
+.news-list .news-date {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.news-list .news-title {
+  font-weight: 600;
+  margin: 0.25rem 0;
+}
+
+/* ===== Tabeller ===== */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+thead {
+  background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+}
+
+th, td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== Guide / innholdsseksjoner ===== */
+.content-section {
+  margin: 2.5rem 0;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.content-section:last-child {
+  border-bottom: none;
+}
+
+.content-section h2 {
+  margin-top: 0;
+}
+
+/* ===== Tags / badges ===== */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.badge-date {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
+}
+
+.badge-type {
+  background: color-mix(in srgb, var(--highlight) 15%, transparent);
+  color: var(--highlight);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  margin-top: 3rem;
+  padding: 2rem 1.25rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ===== Kilde-lenker ===== */
+.source-link {
+  font-size: 0.85rem;
+  color: var(--highlight);
+}
+
+/* ===== Liste med punkter ===== */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+/* ===== Uthevet boks ===== */
+.callout {
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 1.5rem 0;
+}
+
+.callout p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* ===== Bilde/SVG-container ===== */
+.illustration {
+  width: 100%;
+  max-width: 400px;
+  margin: 1.5rem auto;
+  display: block;
+}
+
+.illustration-sm {
+  width: 80px;
+  height: 80px;
+}
+
+/* ===== Sjekkeside / liste ===== */
+.store-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.store-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1rem;
+}
+
+.store-list li svg {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  color: var(--primary);
+}
+
+.store-list .store-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.store-list .store-meta {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* ===== Breadcrumbs (visuell) ===== */
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--primary);
+}
+
+/* ===== Responsivt: store liste på mobil ===== */
+@media (max-width: 480px) {
+  .store-list li {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* ===== Trykk ===== */
+@media print {
+  .site-header, .site-footer, .nav-toggle {
+    display: none;
+  }
+  body {
+    color: #000;
+    background: #fff;
+  }
+}
